@@ -95,14 +95,14 @@ void TestIndexMinPQ2()
 	pq.Insert(5, 2.4);
 	pq.Print();
 
-	pq.DecreaseKey(3, 2.9);
-	pq.DecreaseKey(5, 0.2);
+	pq.DecreaseElem(3, 2.9);
+	pq.DecreaseElem(5, 0.2);
 	cout << pq.At(3) << ' ' << pq.At(5) << '\n';
 	assert( pq.At(3) == 2.9 && pq.At(5) == 0.2 );
 
-	pq.ChangeKey(5, 100.0);
-	pq.ChangeKey(4, 50.0);
-	pq.ChangeKey(1, 2.0);
+	pq.ChangeElem(5, 100.0);
+	pq.ChangeElem(4, 50.0);
+	pq.ChangeElem(1, 2.0);
 //	pq.ChangeKey(555, 1.0);  // Exception here
 	pq.Print();
 	assert( pq.At(1) == 2.0 && pq.At(4) == 50.0 && pq.At(5) == 100.0 );
