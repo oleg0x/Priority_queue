@@ -20,9 +20,9 @@ public:
 	void Insert(uint32_t i, ElementType elem);
 	uint32_t DelMin();
 
-	void DecreaseKey(uint32_t i, ElementType new_elem);
-	void IncreaseKey(uint32_t i, ElementType new_elem);
-	void ChangeKey(uint32_t i, ElementType new_elem);
+	void DecreaseElem(uint32_t i, ElementType new_elem);
+	void IncreaseElem(uint32_t i, ElementType new_elem);
+	void ChangeElem(uint32_t i, ElementType new_elem);
 
 	void Remove(uint32_t i);
 

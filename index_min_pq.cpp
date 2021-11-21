@@ -85,7 +85,7 @@ uint32_t IndexMinPQ<ElementType>::DelMin()
 
 
 template <typename ElementType>
-void IndexMinPQ<ElementType>::DecreaseKey(uint32_t i, ElementType new_elem)
+void IndexMinPQ<ElementType>::DecreaseElem(uint32_t i, ElementType new_elem)
 {
 	ValidateIndex(i);
 	if ( !Contains(i) )
@@ -99,7 +99,7 @@ void IndexMinPQ<ElementType>::DecreaseKey(uint32_t i, ElementType new_elem)
 
 
 template <typename ElementType>
-void IndexMinPQ<ElementType>::ChangeKey(uint32_t i, ElementType new_elem)
+void IndexMinPQ<ElementType>::ChangeElem(uint32_t i, ElementType new_elem)
 {
 	ValidateIndex(i);
 	if ( !Contains(i) )
@@ -114,12 +114,6 @@ void IndexMinPQ<ElementType>::ChangeKey(uint32_t i, ElementType new_elem)
 template <typename ElementType>
 void IndexMinPQ<ElementType>::Print() const
 {
-/*	for ( auto x: pq_ )  cout << x << " ";
-	cout << '\n';
-	for ( auto x: qp_ )  cout << x << " ";
-	cout << '\n';
-	for ( auto x: elements_ )  cout << x << " ";
-	cout << '\n'; */
 	if ( Empty() )
 		cout << "The IndexMinPQ is empty";
 	else
