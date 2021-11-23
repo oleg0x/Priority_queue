@@ -9,11 +9,10 @@ using namespace std;
 template <typename ElementType>
 IndexMinPQ<ElementType>::IndexMinPQ(uint32_t n)
 	: max_size_ {n}
-{
-	pq_.resize(max_size_ + 1, 0);  // 0 ???
-	qp_.resize(max_size_ + 1, -1);
-	elements_.resize(max_size_ + 1, 0);  // 0 ???
-}
+	, pq_(max_size_ + 1, 0)  // 0 ???
+	, qp_(max_size_ + 1, -1)
+	, elements_(max_size_ + 1, 0)  // 0 ???
+{}
 
 
 
