@@ -9,6 +9,8 @@ using namespace std;
 
 void TestPriorityQueue()
 {
+	cout << "---------- " << __func__ << " ----------\n";
+
 	PriorityQueue<int> pq;
 	cout << "Size: " << pq.Size() << ", Empty: " << pq.Empty() << '\n';
 	assert( pq.Size() == 0 && pq.Empty() == true );
@@ -42,50 +44,54 @@ void TestPriorityQueue()
 	pq.Extract();  pq.Pop();
 	pq.Extract();  pq.Pop();
 
-	cout << "TestPriorityQueue is OK.\n\n";
+	cout << __func__ << " is OK.\n\n";
 }
 
 
 
 void TestIndexMinPQ1()
 {
+	cout << "---------- " << __func__ << " ----------\n";
+
 	IndexMinPQ<uint32_t> pq(5);
 	cout << "Size: " << pq.Size() << ", Empty: " << pq.Empty() << '\n';
 	assert( pq.Size() == 0 && pq.Empty() == true );
 
-	pq.Insert(1, 1000);
-	pq.Insert(2, 100);
-	pq.Insert(3, 10);
-	pq.Insert(4, 1);
+	pq.Insert(0, 1000);
+	pq.Insert(1, 100);
+	pq.Insert(2, 10);
+	pq.Insert(3, 1);
 	pq.Print();
 
 	cout << "Size: " << pq.Size() << ", Empty: " << pq.Empty() << '\n';
 	assert( pq.Size() == 4 && pq.Empty() == false );
 
-	cout << pq.Contains(1) << ' ' << pq.Contains(4) << ' '
-	     << pq.Contains(5) << '\n';
-	assert( pq.Contains(1) == true && pq.Contains(4) == true &&
-	        pq.Contains(5) == false );
+	cout << pq.Contains(0) << ' ' << pq.Contains(3) << ' '
+	     << pq.Contains(4) << '\n';
+	assert( pq.Contains(0) == true && pq.Contains(3) == true &&
+	        pq.Contains(4) == false );
 
 	uint32_t a = pq.DelMin();
 	uint32_t b = pq.DelMin();
 	uint32_t c = pq.DelMin();
 	uint32_t d = pq.DelMin();
 	cout << a << ' ' << b << ' ' << c << ' ' << d << '\n';
-	assert( a == 4 && b == 3 && c == 2 && d == 1 );
+	assert( a == 3 && b == 2 && c == 1 && d == 0 );
 
 	pq.Print();
 	cout << "Size: " << pq.Size() << ", Empty: " << pq.Empty() << '\n';
 	assert( pq.Size() == 0 && pq.Empty() == true );
 //	pq.DelMin();  // Exception here
 
-	cout << "TestIndexMinPQ1 is OK.\n\n";
+	cout << __func__ << " is OK.\n\n";
 }
 
 
 
 void TestIndexMinPQ2()
 {
+	cout << "---------- " << __func__ << " ----------\n";
+
 	IndexMinPQ<double> pq(10);
 
 	pq.Insert(1, 3.2);
@@ -108,5 +114,5 @@ void TestIndexMinPQ2()
 	assert( pq.At(1) == 2.0 && pq.At(4) == 50.0 && pq.At(5) == 100.0 );
 	assert( pq.Size() == 5 && pq.Empty() == false );
 
-	cout << "TestIndexMinPQ2 is OK.\n";
+	cout << __func__ << " is OK.\n\n";
 }

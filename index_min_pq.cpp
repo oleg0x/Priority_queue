@@ -9,9 +9,9 @@ using namespace std;
 template <typename ElementType>
 IndexMinPQ<ElementType>::IndexMinPQ(uint32_t n)
 	: max_size_ {n}
-	, pq_(max_size_ + 1, 0)  // 0 ???
+	, pq_(max_size_ + 1, 0)
 	, qp_(max_size_ + 1, -1)
-	, elements_(max_size_ + 1, 0)  // 0 ???
+	, elements_(max_size_ + 1, 0)
 {}
 
 
@@ -52,7 +52,7 @@ ElementType IndexMinPQ<ElementType>::At(uint32_t i) const
 
 
 template <typename ElementType>
-void IndexMinPQ<ElementType>::Insert(uint32_t i, ElementType elem)
+void IndexMinPQ<ElementType>::Insert(uint32_t i, ElementType elem)  // 0 <= i < max_size_
 {
 	ValidateIndex(i);
 	if ( Contains(i) )
@@ -126,8 +126,8 @@ void IndexMinPQ<ElementType>::Print() const
 template <typename ElementType>
 void IndexMinPQ<ElementType>::ValidateIndex(uint32_t i) const
 {
-	if ( i > max_size_ )  // >= ???
-		throw runtime_error("Index > capacity!");
+	if ( i >= max_size_ )  // Must be 0 <= i <= max_size_-1
+		throw runtime_error("Index >= capacity!");
 }
 
 
